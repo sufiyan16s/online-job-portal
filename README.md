@@ -40,7 +40,7 @@ LabourIQ is a complete JavaFX-based desktop job portal system featuring role-bas
 
 # Folder structure
 
-online-job-portal/
+labouriq/
 ├── pom.xml
 ├── LICENSE
 ├── README.md
@@ -48,7 +48,7 @@ online-job-portal/
 ├── FOLDER_STRUCTURE.md
 │
 ├── database/
-│   └── labouriq.db                 
+│   └── labouriq.db                 # auto-created by DBInit
 │
 └── src/
     └── main/
@@ -61,7 +61,7 @@ online-job-portal/
         │       │   ├── LoginController.java
         │       │   ├── SignupController.java
         │       │   ├── FXRouter.java
-        │       │   └── ... (other controllers)
+        │       │   └── ...other controllers
         │       │
         │       ├── dao/
         │       │   ├── UserDAO.java
@@ -92,13 +92,13 @@ online-job-portal/
             │   ├── employer_dashboard.fxml
             │   ├── jobseeker_dashboard.fxml
             │   ├── post_job.fxml
-            │   └── ... (other FXML UIs)
+            │   └── ...other FXML files
             │
             ├── css/
             │   └── styles.css
             │
             └── images/
-                └── (branding & screenshots)
+                └── ...branding & screenshots
 
 
 
