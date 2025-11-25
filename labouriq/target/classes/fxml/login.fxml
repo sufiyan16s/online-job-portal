@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.labouriq.controllers.LoginController" prefWidth="900" prefHeight="560">
+    <stylesheets>
+        <String fx:value="/css/styles.css"/>
+    </stylesheets>
+
+    <HBox spacing="20" AnchorPane.leftAnchor="20" AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.rightAnchor="20">
+        <!-- Left branding panel -->
+        <VBox fx:id="leftPanel" spacing="18" prefWidth="360" styleClass="left-panel">
+            <ImageView fitWidth="80" fitHeight="80">
+                <image>
+                    <!-- absolute path to your uploaded image file -->
+
+                </image>
+            </ImageView>
+            <Label text="Welcome back" styleClass="title"/>
+            <Label text="Sign in to manage listings, review applicants, or continue your job search." wrapText="true" />
+            <HBox spacing="8">
+                <Button text="Job Seeker" styleClass="ghost-btn"/>
+                <Button text="Employer" styleClass="ghost-btn"/>
+            </HBox>
+            <VBox>
+                <Label text="Quick stats" styleClass="section-title"/>
+                <HBox spacing="20">
+                    <VBox>
+                        <Label text="1.2k" styleClass="stat-large"/>
+                        <Label text="Jobs posted"/>
+                    </VBox>
+                    <VBox>
+                        <Label text="5.4k" styleClass="stat-large"/>
+                        <Label text="Applications"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </VBox>
+
+        <!-- Right login form -->
+        <VBox spacing="12" prefWidth="520" styleClass="right-panel">
+            <Label text="Sign in to your account" styleClass="form-title"/>
+            <TextField fx:id="emailField" promptText="you@example.com"/>
+            <PasswordField fx:id="passwordField" promptText="Password"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <CheckBox fx:id="rememberCheck" text="Remember me"/>
+                <Hyperlink text="Forgot password?"/>
+            </HBox>
+            <Button fx:id="signInButton" text="Sign in" onAction="#onSignIn" styleClass="primary-btn"/>
+            <Separator/>
+            <Label text="Or continue with" styleClass="muted"/>
+            <HBox spacing="10">
+                <Button text="Google" styleClass="social-btn"/>
+                <Button text="GitHub" styleClass="social-btn"/>
+            </HBox>
+        </VBox>
+    </HBox>
+</AnchorPane>

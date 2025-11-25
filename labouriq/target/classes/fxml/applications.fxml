@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.labouriq.controllers.ApplicationsController" prefWidth="900" prefHeight="600">
+    <top>
+        <HBox spacing="12" style="-fx-padding:10;">
+            <ImageView fitWidth="40" fitHeight="40">
+                <image><Image url="file:/mnt/data/ChatGPT Image Nov 14, 2025, 04_22_42 PM.png"/></image>
+            </ImageView>
+            <Label text="Applications" styleClass="title"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="8" style="-fx-padding:12;">
+            <Label text="Applications for selected job" styleClass="section-title"/>
+            <TableView fx:id="appsTable" prefHeight="420">
+                <columns>
+                    <TableColumn text="Applicant" prefWidth="180"/>
+                    <TableColumn text="Applied At" prefWidth="160"/>
+                    <TableColumn text="Resume" prefWidth="200"/>
+                    <TableColumn text="Cover Letter" prefWidth="260"/>
+                    <TableColumn text="Status" prefWidth="120"/>
+                </columns>
+            </TableView>
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Accept" onAction="#onAccept"/>
+                <Button text="Reject" onAction="#onReject"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

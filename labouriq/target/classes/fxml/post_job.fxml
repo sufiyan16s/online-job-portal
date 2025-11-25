@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.labouriq.controllers.PostJobController"
+            prefWidth="640" prefHeight="520">
+    <stylesheets>
+        <String fx:value="/css/styles.css"/>
+    </stylesheets>
+
+    <VBox spacing="12" AnchorPane.leftAnchor="12" AnchorPane.topAnchor="12" AnchorPane.rightAnchor="12" AnchorPane.bottomAnchor="12">
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <ImageView fitWidth="48" fitHeight="48">
+                <image>
+                    <Image url="file:/mnt/data/ChatGPT Image Nov 14, 2025, 04_22_42 PM.png"/>
+                </image>
+            </ImageView>
+            <Label text="Post a New Job" styleClass="form-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <GridPane hgap="12" vgap="12">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="30"/>
+                <ColumnConstraints percentWidth="70"/>
+            </columnConstraints>
+
+            <Label text="Job Title:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="titleField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Location:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="locationField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Salary:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="salaryField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Description:" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.valignment="TOP"/>
+            <TextArea fx:id="descArea" prefRowCount="8" wrapText="true" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Label fx:id="messageLabel" textFill="red" />
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Cancel" onAction="#onCancel" />
+            <Button text="Post Job" styleClass="primary-btn" onAction="#onPostJob" fx:id="postBtn"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

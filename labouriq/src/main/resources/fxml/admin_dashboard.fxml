@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.labouriq.controllers.AdminController"
+            prefWidth="1000" prefHeight="640">
+    <top>
+        <HBox spacing="12" style="-fx-padding:12; -fx-alignment:center-left; -fx-background-color: transparent;">
+            <ImageView fitWidth="48" fitHeight="48">
+                <image>
+                    <Image url="file:/mnt/data/ChatGPT Image Nov 14, 2025, 04_22_42 PM.png"/>
+                </image>
+            </ImageView>
+            <Label text="labouriq - Admin" styleClass="title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Logout" onAction="#onLogout" />
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="10" styleClass="side-panel" prefWidth="200" >
+            <Label text="Admin Menu" styleClass="side-title"/>
+            <Button text="Dashboard" onAction="#showDashboard" maxWidth="Infinity"/>
+            <Button text="Users" onAction="#showUsers" maxWidth="Infinity"/>
+            <Button text="Pending Jobs" onAction="#showPendingJobs" maxWidth="Infinity"/>
+            <Button text="Settings" onAction="#showSettings" maxWidth="Infinity"/>
+            <Button text="Reports" onAction="#showReports" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentPane" style="-fx-padding:16;">
+            <!-- initial content -->
+            <VBox spacing="12">
+                <HBox spacing="12">
+                    <VBox spacing="6" style="-fx-background-color: rgba(255,255,255,0.03); -fx-padding:12; -fx-border-radius:8; -fx-background-radius:8;">
+                        <Label text="Total Users" styleClass="card-title"/>
+                        <Label fx:id="totalUsersLabel" text="--" styleClass="card-value"/>
+                    </VBox>
+                    <VBox spacing="6" style="-fx-background-color: rgba(255,255,255,0.03); -fx-padding:12; -fx-border-radius:8; -fx-background-radius:8;">
+                        <Label text="Jobs Posted" styleClass="card-title"/>
+                        <Label fx:id="totalJobsLabel" text="--" styleClass="card-value"/>
+                    </VBox>
+                </HBox>
+
+                <Label text="Recent Activity" styleClass="section-title"/>
+                <TableView fx:id="activityTable" prefHeight="320">
+                    <columns>
+                        <TableColumn text="Time" prefWidth="140"/>
+                        <TableColumn text="User/Employer" prefWidth="200"/>
+                        <TableColumn text="Action" prefWidth="400"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </StackPane>
+    </center>
+
+</BorderPane>

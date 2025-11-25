@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.labouriq.controllers.JobSeekerController"
+            prefWidth="1000" prefHeight="640">
+    <top>
+        <HBox spacing="12" style="-fx-padding:12; -fx-alignment:center-left;">
+            <ImageView fitWidth="48" fitHeight="48">
+                <image>
+                    <Image url="file:/mnt/data/ChatGPT Image Nov 14, 2025, 04_22_42 PM.png"/>
+                </image>
+            </ImageView>
+            <Label text="labouriq - Job Seeker" styleClass="title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Logout" onAction="#onLogout"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="10" styleClass="side-panel" prefWidth="220">
+            <Label text="Job Seeker Menu" styleClass="side-title"/>
+            <Button text="Search Jobs" onAction="#showSearch" maxWidth="Infinity"/>
+            <Button text="My Applications" onAction="#showApplications" maxWidth="Infinity"/>
+            <Button text="Profile" onAction="#showProfile" maxWidth="Infinity"/>
+            <Button text="Saved Jobs" onAction="#showSaved" maxWidth="Infinity"/>
+            <Button text="Recommendations" onAction="#showRecommendations" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentPane" style="-fx-padding:16;">
+            <VBox spacing="12">
+                <Label text="Job Recommendations" styleClass="section-title"/>
+                <ListView fx:id="recommendationList" prefHeight="360"/>
+                <HBox spacing="8">
+                    <Label fx:id="recCount" text="0 recommendations"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Refresh" onAction="#onRefresh" />
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

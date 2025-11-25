@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.labouriq.controllers.EmployerController"
+            prefWidth="1000" prefHeight="640">
+    <top>
+        <HBox spacing="12" style="-fx-padding:12; -fx-alignment:center-left;">
+            <ImageView fitWidth="48" fitHeight="48">
+                <image>
+                    <Image url="file:/mnt/data/ChatGPT Image Nov 14, 2025, 04_22_42 PM.png"/>
+                </image>
+            </ImageView>
+            <Label text="labouriq - Employer" styleClass="title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Logout" onAction="#onLogout"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="10" styleClass="side-panel" prefWidth="200">
+            <Label text="Employer Menu" styleClass="side-title"/>
+            <Button text="My Jobs" onAction="#showJobs" maxWidth="Infinity"/>
+            <Button text="Post Job" onAction="#showPostJob" maxWidth="Infinity"/>
+            <Button text="Applications" onAction="#showApplications" maxWidth="Infinity"/>
+            <Button text="Messages" onAction="#showMessages" maxWidth="Infinity"/>
+            <Button text="Statistics" onAction="#showStats" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentPane" style="-fx-padding:16;">
+            <VBox spacing="12">
+                <Label text="Active Jobs" styleClass="section-title" />
+                <TableView fx:id="jobsTable" prefHeight="360">
+                    <columns>
+                        <TableColumn text="Title" prefWidth="300"/>
+                        <TableColumn text="Applicants" prefWidth="120"/>
+                        <TableColumn text="Status" prefWidth="120"/>
+                        <TableColumn text="Actions" prefWidth="200"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="8">
+                    <Button text="New Job" onAction="#onNewJob" styleClass="primary-btn"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="jobCountLabel" text="0 jobs" />
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>
