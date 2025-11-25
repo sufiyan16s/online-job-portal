@@ -41,64 +41,64 @@ LabourIQ is a complete JavaFX-based desktop job portal system featuring role-bas
 # Folder structure
 
 labouriq/
-├── pom.xml
-├── LICENSE
-├── README.md
-├── .gitignore
-├── FOLDER_STRUCTURE.md
-│
-├── database/
-│   └── labouriq.db                 # auto-created by DBInit
-│
-└── src/
-    └── main/
-        ├── java/
-        │   └── com/labouriq/
-        │       ├── controllers/
-        │       │   ├── AdminController.java
-        │       │   ├── EmployerController.java
-        │       │   ├── JobSeekerController.java
-        │       │   ├── LoginController.java
-        │       │   ├── SignupController.java
-        │       │   ├── FXRouter.java
-        │       │   └── ...other controllers
-        │       │
-        │       ├── dao/
-        │       │   ├── UserDAO.java
-        │       │   ├── JobDAO.java
-        │       │   ├── ApplicationDAO.java
-        │       │   └── MessageDAO.java
-        │       │
-        │       ├── db/
-        │       │   ├── DBConnection.java
-        │       │   └── DBInit.java
-        │       │
-        │       ├── model/
-        │       │   ├── User.java
-        │       │   ├── Job.java
-        │       │   ├── Application.java
-        │       │   └── Message.java
-        │       │
-        │       └── MainApp.java
-        │
-        └── resources/
-            ├── database/
-            │   └── database.sql
-            │
-            ├── fxml/
-            │   ├── login.fxml
-            │   ├── signup.fxml
-            │   ├── admin_dashboard.fxml
-            │   ├── employer_dashboard.fxml
-            │   ├── jobseeker_dashboard.fxml
-            │   ├── post_job.fxml
-            │   └── ...other FXML files
-            │
-            ├── css/
-            │   └── styles.css
-            │
-            └── images/
-                └── ...branding & screenshots
+-├── pom.xml
+-├── LICENSE
+-├── README.md
+-├── .gitignore
+-├── FOLDER_STRUCTURE.md
+-│
+-├── database/
+-│   └── labouriq.db                 # auto-created by DBInit
+-│
+-└── src/
+-    └── main/
+-        ├── java/
+-        │   └── com/labouriq/
+-        │       ├── controllers/
+-        │       │   ├── AdminController.java
+-        │       │   ├── EmployerController.java
+-        │       │   ├── JobSeekerController.java
+-        │       │   ├── LoginController.java
+-        │       │   ├── SignupController.java
+-        │       │   ├── FXRouter.java
+-        │       │   └── ...other controllers
+-        │       │
+-        │       ├── dao/
+-        │       │   ├── UserDAO.java
+-        │       │   ├── JobDAO.java
+-        │       │   ├── ApplicationDAO.java
+-        │       │   └── MessageDAO.java
+-        │       │
+-        │       ├── db/
+-        │       │   ├── DBConnection.java
+-        │       │   └── DBInit.java
+-        │       │
+-        │       ├── model/
+-        │       │   ├── User.java
+-        │       │   ├── Job.java
+-        │       │   ├── Application.java
+-        │       │   └── Message.java
+-        │       │
+-        │       └── MainApp.java
+-        │
+-        └── resources/
+-            ├── database/
+-            │   └── database.sql
+-            │
+-            ├── fxml/
+-            │   ├── login.fxml
+-            │   ├── signup.fxml
+-            │   ├── admin_dashboard.fxml
+-            │   ├── employer_dashboard.fxml
+-            │   ├── jobseeker_dashboard.fxml
+-            │   ├── post_job.fxml
+-            │   └── ...other FXML files
+-            │
+-            ├── css/
+-            │   └── styles.css
+-            │
+-            └── images/
+-                └── ...branding & screenshots
 
 
 
