@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.labouriq.controllers.AdminReportsController"
+      spacing="20"
+      style="-fx-background-color: #F4F6F9; -fx-padding: 30;"
+      prefHeight="600" prefWidth="900"
+      stylesheets="@/css/styles.css">
+
+    <Label text="System Analytics" styleClass="page-title"/>
+    <Label text="Overview of platform performance." styleClass="subtitle-text"/>
+
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+
+        <VBox styleClass="table-card" HBox.hgrow="ALWAYS" spacing="10">
+            <Label text="User Roles Distribution" styleClass="section-header"/>
+            <Separator/>
+            <PieChart fx:id="userPieChart" labelsVisible="true" legendVisible="false" VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+        <VBox styleClass="table-card" HBox.hgrow="ALWAYS" spacing="10">
+            <Label text="Jobs Posted (This Week)" styleClass="section-header"/>
+            <Separator/>
+            <BarChart fx:id="jobsBarChart" VBox.vgrow="ALWAYS">
+                <xAxis>
+                    <CategoryAxis label="Days" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Jobs" />
+                </yAxis>
+            </BarChart>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="20">
+        <VBox styleClass="kpi-card" HBox.hgrow="ALWAYS">
+            <Label text="Total System Messages" styleClass="kpi-label"/>
+            <Label text="14,205" styleClass="kpi-value"/>
+        </VBox>
+        <VBox styleClass="kpi-card" HBox.hgrow="ALWAYS">
+            <Label text="Avg Application Time" styleClass="kpi-label"/>
+            <Label text="2.4 Days" styleClass="kpi-value"/>
+        </VBox>
+        <VBox styleClass="kpi-card" HBox.hgrow="ALWAYS">
+            <Label text="Server Status" styleClass="kpi-label"/>
+            <Label text="Online (99.9%)" styleClass="kpi-value" textFill="#2ecc71"/>
+        </VBox>
+    </HBox>
+
+</VBox>

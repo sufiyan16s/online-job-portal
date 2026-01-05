@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<HBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.labouriq.controllers.MessagingController"
+      spacing="0"
+      style="-fx-background-color: #F4F6F9;"
+      prefHeight="600" prefWidth="900"
+      stylesheets="@/css/styles.css">
+
+    <VBox prefWidth="300" style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-width: 0 1 0 0;">
+
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <Label text="Messages" styleClass="section-header"/>
+            <HBox alignment="CENTER" spacing="10" styleClass="search-box">
+                <SVGPath content="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                         fill="#95a5a6" scaleX="0.8" scaleY="0.8"/>
+                <TextField fx:id="contactSearch" promptText="Search people..." styleClass="transparent-field"/>
+            </HBox>
+        </VBox>
+
+        <Separator/>
+
+        <ListView fx:id="contactList" VBox.vgrow="ALWAYS" styleClass="contact-list"/>
+    </VBox>
+
+    <VBox HBox.hgrow="ALWAYS" spacing="0">
+
+        <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: white; -fx-padding: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 0, 5, 0, 0);">
+            <StackPane style="-fx-background-color: #E8EAF6; -fx-background-radius: 50; -fx-pref-width: 40; -fx-pref-height: 40;">
+                <Label fx:id="chatInitials" text="--" textFill="#3F51B5" style="-fx-font-weight:bold;"/>
+            </StackPane>
+            <VBox>
+                <Label fx:id="chatNameLabel" text="Select a conversation" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+                <Label fx:id="chatRoleLabel" text="" styleClass="muted-text"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button styleClass="icon-only-btn">
+                <graphic><SVGPath content="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="#95a5a6"/></graphic>
+            </Button>
+        </HBox>
+
+        <ScrollPane fx:id="msgScrollPane" fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent; -fx-background: #F4F6F9;">
+            <content>
+                <VBox fx:id="msgContainer" spacing="15" style="-fx-padding: 20; -fx-background-color: #F4F6F9;">
+                    <Label text="No messages yet." styleClass="muted-text" alignment="CENTER" maxWidth="Infinity"/>
+                </VBox>
+            </content>
+        </ScrollPane>
+
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 15; -fx-background-color: white;">
+            <TextField fx:id="msgField" promptText="Type a message..." styleClass="modern-input" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="sendBtn" onAction="#onSendMessage" styleClass="primary-btn" style="-fx-background-color: #4A00E0; -fx-pref-width: 50; -fx-pref-height: 40;">
+                <graphic><SVGPath content="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="WHITE" scaleX="0.8" scaleY="0.8"/></graphic>
+            </Button>
+        </HBox>
+
+    </VBox>
+</HBox>

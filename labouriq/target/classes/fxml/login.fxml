@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.labouriq.controllers.LoginController"
+           prefWidth="1000" prefHeight="700"
+           styleClass="root-bg"
+           stylesheets="@/css/styles.css">
+
+    <HBox maxWidth="950" maxHeight="600" styleClass="card-container">
+        <effect>
+            <DropShadow radius="30" offsetY="10" color="#2d1b6940"/>
+        </effect>
+
+        <VBox alignment="CENTER_LEFT" prefWidth="400" spacing="25" styleClass="left-panel" HBox.hgrow="NEVER">
+            <padding>
+                <Insets top="50" right="40" bottom="50" left="40"/>
+            </padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <StackPane styleClass="logo-icon-bg">
+                    <SVGPath content="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"
+                             fill="WHITE" scaleX="1.2" scaleY="1.2"/>
+                </StackPane>
+                <Label text="LabourIQ" styleClass="brand-text"/>
+            </HBox>
+
+            <Label text="Empowering the workforce of tomorrow."
+                   wrapText="true" styleClass="tagline-text"/>
+
+            <VBox spacing="10" styleClass="glass-card">
+                <Label text="Current Activity" textFill="WHITE" style="-fx-font-weight:bold; -fx-opacity:0.9;"/>
+                <HBox spacing="20">
+                    <VBox>
+                        <Label text="1.2k" styleClass="stat-val"/>
+                        <Label text="New Jobs" styleClass="stat-lbl"/>
+                    </VBox>
+                    <Separator orientation="VERTICAL" styleClass="glass-separator"/>
+                    <VBox>
+                        <Label text="5.4k" styleClass="stat-val"/>
+                        <Label text="Applicants" styleClass="stat-lbl"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <VBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS">
+                <Label text="© 2025 LabourIQ Inc." textFill="#ffffff80" style="-fx-font-size: 10px;"/>
+            </VBox>
+        </VBox>
+
+        <VBox alignment="CENTER_LEFT" prefWidth="550" spacing="20" styleClass="right-panel" HBox.hgrow="ALWAYS">
+            <padding>
+                <Insets top="50" right="60" bottom="50" left="60"/>
+            </padding>
+
+            <VBox spacing="5">
+                <Label text="Hello Again!" styleClass="title-text"/>
+                <Label text="Welcome back you've been missed." styleClass="subtitle-text"/>
+            </VBox>
+
+            <HBox styleClass="toggle-container" alignment="CENTER">
+                <fx:define>
+                    <ToggleGroup fx:id="userTypeGroup"/>
+                </fx:define>
+                <ToggleButton text="Job Seeker" toggleGroup="$userTypeGroup" selected="true"
+                              maxWidth="Infinity" HBox.hgrow="ALWAYS" styleClass="toggle-btn-left"/>
+                <ToggleButton text="Employer" toggleGroup="$userTypeGroup"
+                              maxWidth="Infinity" HBox.hgrow="ALWAYS" styleClass="toggle-btn-right"/>
+            </HBox>
+
+            <VBox spacing="15">
+                <TextField fx:id="emailField" promptText="Enter email" styleClass="modern-input"/>
+                <PasswordField fx:id="passwordField" promptText="Password" styleClass="modern-input"/>
+            </VBox>
+
+            <HBox alignment="CENTER_LEFT">
+                <CheckBox fx:id="rememberCheck" text="Keep me signed in" styleClass="small-text"/>
+                <AnchorPane HBox.hgrow="ALWAYS"/>
+                <Hyperlink text="Recovery Password" styleClass="forgot-link"/>
+            </HBox>
+
+            <Button fx:id="signInButton" text="Sign In"
+                    onAction="#onSignIn" maxWidth="Infinity" styleClass="gradient-btn"/>
+
+            <HBox alignment="CENTER" spacing="10">
+                <Separator HBox.hgrow="ALWAYS"/>
+                <Label text="Or continue with" styleClass="small-text"/>
+                <Separator HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <HBox spacing="15" alignment="CENTER">
+                <Button styleClass="icon-btn">
+                    <graphic><SVGPath content="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .533 5.333.533 12S5.867 24 12.48 24c3.44 0 6.04-1.133 8.16-3.293 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.133H12.48z" fill="#333" scaleX="0.8" scaleY="0.8"/></graphic>
+                </Button>
+                <Button styleClass="icon-btn">
+                    <graphic><SVGPath content="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" fill="#333" scaleX="0.8" scaleY="0.8"/></graphic>
+                </Button>
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="5">
+                <Label text="Not a member?" styleClass="small-text"/>
+                <Hyperlink text="Register now" onAction="#goToSignup" styleClass="register-link"/>
+            </HBox>
+
+        </VBox>
+    </HBox>
+</StackPane>
